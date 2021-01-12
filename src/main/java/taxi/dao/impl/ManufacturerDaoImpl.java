@@ -28,14 +28,12 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
 
     @Override
     public Manufacturer update(Manufacturer manufacturer) {
-        List<Manufacturer> manufacturers = Storage.manufacturers;
-        for (Manufacturer each : manufacturers) {
-            if (each.getId().equals(manufacturer.getId())) {
-                Storage.manufacturers.set(Math.toIntExact(each.getId() - 1L), manufacturer);
-                return manufacturer;
+        for (int i = 0; i < Storage.manufacturers.size(); i++) {
+            if (manufacturer.getId().equals(Storage.manufacturers.get(i).getId())) {
+                Storage.manufacturers.set(i, manufacturer);
             }
         }
-        throw new RuntimeException("Can't update manufacturer");
+        return manufacturer;
     }
 
     @Override
