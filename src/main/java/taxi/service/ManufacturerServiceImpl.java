@@ -1,12 +1,12 @@
-package service;
+package taxi.service;
 
-import dao.ManufacturerDao;
-import db.Storage;
 import java.util.List;
 import java.util.Optional;
-import lib.Inject;
-import lib.Service;
-import model.Manufacturer;
+import taxi.dao.ManufacturerDao;
+import taxi.db.Storage;
+import taxi.lib.Inject;
+import taxi.lib.Service;
+import taxi.model.Manufacturer;
 
 @Service
 public class ManufacturerServiceImpl implements ManufacturerService {
@@ -27,22 +27,16 @@ public class ManufacturerServiceImpl implements ManufacturerService {
 
     @Override
     public List<Manufacturer> getAll() {
-        return Storage.manufacturers;
+        return manufacturerDao.getAll();
     }
 
     @Override
     public Manufacturer update(Manufacturer manufacturer) {
-        Storage.manufacturers.add(manufacturer);
-        return manufacturer;
+        return manufacturerDao.update(manufacturer);
     }
 
     @Override
     public boolean delete(Long id) {
-        Manufacturer manufacturer = Optional.of(Storage.manufacturers
-                .get(Math.toIntExact(id))).get();
-        if (Storage.manufacturers.remove(manufacturer)) {
-            return true;
-        }
-        return false;
+       return manufacturerDao.delete(id);
     }
 }

@@ -1,22 +1,13 @@
-package db;
+package taxi.db;
 
 import java.util.ArrayList;
 import java.util.List;
-import model.Car;
-import model.Manufacturer;
+import taxi.model.Manufacturer;
 
 public class Storage {
     public static final List<Manufacturer> manufacturers = new ArrayList<>();
-    public static final List<Car> carsList = new ArrayList<>();
 
     private static long manufacturerId = 0;
-    private static long carsId = 0;
-
-    public static void addDCar(Car car) {
-        carsId++;
-        car.setId(carsId);
-        carsList.add(car);
-    }
 
     public static void addManufacturer(Manufacturer manufacturer) {
         manufacturerId++;
