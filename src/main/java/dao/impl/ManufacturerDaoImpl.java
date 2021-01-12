@@ -2,10 +2,10 @@ package dao.impl;
 
 import dao.ManufacturerDao;
 import db.Storage;
-import lib.Dao;
-import model.Manufacturer;
 import java.util.List;
 import java.util.Optional;
+import lib.Dao;
+import model.Manufacturer;
 
 @Dao
 public class ManufacturerDaoImpl implements ManufacturerDao {
@@ -33,9 +33,10 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
 
     @Override
     public boolean delete(Long id) {
-        Manufacturer manufacturer = Optional.of(Storage.manufacturers.get(Math.toIntExact(id))).get();
-        if (Storage.manufacturers.remove(manufacturer)){
-          return true;
+        Manufacturer manufacturer = Optional.of(Storage.manufacturers
+                .get(Math.toIntExact(id))).get();
+        if (Storage.manufacturers.remove(manufacturer)) {
+            return true;
         }
         return false;
     }

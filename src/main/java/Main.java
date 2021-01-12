@@ -6,7 +6,8 @@ public class Main {
     private static final Injector injector = Injector.getInstance("git-hw-dao-three");
 
     public static void main(String[] args) {
-        ManufacturerServiceImpl manufacturerService = (ManufacturerServiceImpl) injector.getInstance(ManufacturerServiceImpl.class);
+        ManufacturerServiceImpl manufacturerService = (ManufacturerServiceImpl) injector
+                .getInstance(ManufacturerServiceImpl.class);
         Manufacturer manufacturer = new Manufacturer("Opel", "Germany");
         manufacturer.setName("Volkswagen");
 

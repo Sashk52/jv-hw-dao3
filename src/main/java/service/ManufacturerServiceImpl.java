@@ -2,14 +2,14 @@ package service;
 
 import dao.ManufacturerDao;
 import db.Storage;
+import java.util.List;
+import java.util.Optional;
 import lib.Inject;
 import lib.Service;
 import model.Manufacturer;
-import java.util.List;
-import java.util.Optional;
 
 @Service
-public class ManufacturerServiceImpl implements ManufacturerService{
+public class ManufacturerServiceImpl implements ManufacturerService {
 
     @Inject
     private ManufacturerDao manufacturerDao;
@@ -21,7 +21,8 @@ public class ManufacturerServiceImpl implements ManufacturerService{
 
     @Override
     public Manufacturer get(Long id) {
-        return Optional.of(Storage.manufacturers.get(Math.toIntExact(id))).get();
+        return Optional.of(Storage.manufacturers
+                .get(Math.toIntExact(id))).get();
     }
 
     @Override
@@ -37,8 +38,9 @@ public class ManufacturerServiceImpl implements ManufacturerService{
 
     @Override
     public boolean delete(Long id) {
-        Manufacturer manufacturer = Optional.of(Storage.manufacturers.get(Math.toIntExact(id))).get();
-        if (Storage.manufacturers.remove(manufacturer)){
+        Manufacturer manufacturer = Optional.of(Storage.manufacturers
+                .get(Math.toIntExact(id))).get();
+        if (Storage.manufacturers.remove(manufacturer)) {
             return true;
         }
         return false;
