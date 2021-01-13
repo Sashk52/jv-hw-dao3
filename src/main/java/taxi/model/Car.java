@@ -46,4 +46,14 @@ public class Car {
     public List<Driver> getDrivers() {
         return drivers;
     }
+
+    @Override
+    public String toString() {
+        return "Car{"
+                + "id=" + id
+                + ", model='" + model + '\''
+                + ", manufacturer=" + manufacturer
+                + ", drivers=" + drivers
+                + '}';
+    }
 }
