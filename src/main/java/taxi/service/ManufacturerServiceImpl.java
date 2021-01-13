@@ -1,7 +1,6 @@
 package taxi.service;
 
 import java.util.List;
-import java.util.Optional;
 import taxi.dao.ManufacturerDao;
 import taxi.lib.Inject;
 import taxi.lib.Service;
@@ -20,7 +19,7 @@ public class ManufacturerServiceImpl implements ManufacturerService {
 
     @Override
     public Manufacturer get(Long id) {
-        return Optional.of(manufacturerDao.get(id)).get().get();
+        return manufacturerDao.get(id).get();
     }
 
     @Override
