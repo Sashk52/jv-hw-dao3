@@ -1,6 +1,5 @@
 package taxi.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import taxi.dao.CarDao;
 import taxi.lib.Inject;
@@ -51,18 +50,5 @@ public class CarServiceImpl implements CarService {
     public void removeDriverFromCar(Driver driver, Car car) {
         car.getDrivers().remove(driver);
         carDao.update(car);
-    }
-
-    @Override
-    public List<Car> getAllByDriver(Long driverId) {
-        List<Car> cars = new ArrayList<>();
-        for (Car car : carDao.getAll()) {
-            for (int i = 0; i < car.getDrivers().size(); i++) {
-                if (car.getDrivers().get(i).getId().equals(driverId)) {
-                    cars.add(car);
-                }
-            }
-        }
-        return cars;
     }
 }

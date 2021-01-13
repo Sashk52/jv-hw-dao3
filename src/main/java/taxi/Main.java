@@ -96,10 +96,6 @@ public class Main {
         cars = carService.getAll();
         System.out.println(cars);
 
-        carService.getAllByDriver(driver1.getId());
-        carService.getAllByDriver(driver2.getId());
-        carService.getAllByDriver(driver3.getId());
-
         cars = carService.getAll();
         System.out.println(cars);
 
