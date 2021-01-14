@@ -1,20 +1,20 @@
 package taxi.dao.impl;
 
+import java.sql.Connection;
+import java.util.List;
+import java.util.Optional;
 import taxi.dao.ManufacturerDao;
 import taxi.lib.Dao;
 import taxi.model.Manufacturer;
 import taxi.util.ConnectionUtil;
-
-import java.sql.Connection;
-import java.util.List;
-import java.util.Optional;
 
 @Dao
 public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
     @Override
     public Manufacturer create(Manufacturer manufacturer) {
         Connection connection = ConnectionUtil.getConnection();
-        String sqlQuery = "INSERT INTO manufacturer (manufacturer_name, manufacturer_country)" + "VALUES (?,?);";
+        String sqlQuery = "INSERT INTO manufacturer (manufacturer_name, manufacturer_country)"
+                + "VALUES (?,?);";
 
         return null;
     }

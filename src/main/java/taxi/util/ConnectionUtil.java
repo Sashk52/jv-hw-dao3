@@ -13,6 +13,7 @@ public class ConnectionUtil {
             throw new RuntimeException("Can't found MySQL driver", e);
         }
     }
+
     public static Connection getConnection() {
         Properties dbProperties = new Properties();
         dbProperties.put("user", "root");

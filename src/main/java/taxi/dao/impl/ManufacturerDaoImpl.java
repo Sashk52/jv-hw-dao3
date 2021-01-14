@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 import taxi.dao.ManufacturerDao;
 import taxi.db.Storage;
-import taxi.lib.Dao;
 import taxi.model.Manufacturer;
 
 public class ManufacturerDaoImpl implements ManufacturerDao {
