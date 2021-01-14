@@ -7,7 +7,6 @@ import taxi.db.Storage;
 import taxi.lib.Dao;
 import taxi.model.Manufacturer;
 
-@Dao
 public class ManufacturerDaoImpl implements ManufacturerDao {
 
     @Override
