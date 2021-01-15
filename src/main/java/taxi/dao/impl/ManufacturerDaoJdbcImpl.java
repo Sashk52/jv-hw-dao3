@@ -17,7 +17,7 @@ import taxi.util.ConnectionUtil;
 public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
     @Override
     public Manufacturer create(Manufacturer manufacturer) {
-        String sqlQuery = "INSERT INTO manufacturer (name, country)"
+        String sqlQuery = "INSERT INTO manufacturer (manufacturer_name, manufacturer_country)"
                 + "VALUES (?,?);";
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement preparedStatement = connection
