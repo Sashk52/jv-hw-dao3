@@ -8,3 +8,5 @@ CREATE TABLE `taxi_service`.`manufacturer` (
                                                PRIMARY KEY (`manufacturer_id`))
     ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+    CHANGE COLUMN `deleted` `deleted` VARCHAR(5) NULL DEFAULT 'FALSE' ;
+    CHANGE COLUMN `deleted` `is_deleted` VARCHAR(5) NULL DEFAULT 'FALSE' ;
