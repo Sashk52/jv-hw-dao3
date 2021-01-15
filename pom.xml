@@ -7,6 +7,7 @@
     <groupId>org.example</groupId>
     <artifactId>mate-academy-github-hw</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <dependencies>
     <dependency>
         <groupId>mysql</groupId>
