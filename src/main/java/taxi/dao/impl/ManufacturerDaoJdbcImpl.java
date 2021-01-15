@@ -29,8 +29,6 @@ public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
             while (resultset.next()) {
                 manufacturer.setId(resultset.getObject(1, Long.class));
             }
-            preparedStatement.close();
-            connection.close();
         } catch (SQLException e) {
             throw new RuntimeException("Can't insert manufacturer " + manufacturer, e);
         }
@@ -48,8 +46,6 @@ public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
             if (resultset.next()) {
                 manufacturer = createManufacturer(resultset);
             }
-            preparedStatement.close();
-            connection.close();
             return Optional.ofNullable(manufacturer);
         } catch (SQLException e) {
             throw new RuntimeException("Can't get manufacturer by id " + id, e);
@@ -66,8 +62,6 @@ public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
             while (resultset.next()) {
                 manufacturers.add(createManufacturer(resultset));
             }
-            preparedStatement.close();
-            connection.close();
         } catch (SQLException ex) {
             throw new RuntimeException("Can't getAll manufacturers ", ex);
         }
@@ -84,8 +78,6 @@ public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
             preparedStatement.setString(2, manufacturer.getCountry());
             preparedStatement.setLong(3, manufacturer.getId());
             preparedStatement.executeUpdate();
-            preparedStatement.close();
-            connection.close();
         } catch (SQLException ex) {
             throw new RuntimeException("Can't update manufacturer " + manufacturer, ex);
         }
@@ -101,8 +93,6 @@ public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
                 PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery)) {
             preparedStatement.setLong(1, id);
             int updatesMade = preparedStatement.executeUpdate();
-            preparedStatement.close();
-            connection.close();
             return updatesMade > 0;
         } catch (SQLException ex) {
             throw new RuntimeException("Can't delete manufacturer by id " + id, ex);
