@@ -22,7 +22,7 @@ public class CarDaoImpl implements CarDao {
 
         return Storage.cars.stream()
                 .filter(x -> x.getId()
-                .equals(id)).findFirst();
+                        .equals(id)).findFirst();
     }
 
     @Override
