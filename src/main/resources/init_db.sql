@@ -10,3 +10,5 @@ CREATE TABLE `taxi_service`.`manufacturer` (
 DEFAULT CHARACTER SET = utf8;
     CHANGE COLUMN `deleted` `deleted` VARCHAR(5) NULL DEFAULT 'FALSE' ;
     CHANGE COLUMN `deleted` `is_deleted` VARCHAR(5) NULL DEFAULT 'FALSE' ;
+    CHANGE COLUMN `manufacturer_name` `name` VARCHAR(225) NOT NULL ,
+    CHANGE COLUMN `manufacturer_country` `country` VARCHAR(225) NOT NULL ;
