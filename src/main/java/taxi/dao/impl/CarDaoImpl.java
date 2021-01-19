@@ -5,10 +5,8 @@ import java.util.List;
 import java.util.Optional;
 import taxi.dao.CarDao;
 import taxi.db.Storage;
-import taxi.lib.Dao;
 import taxi.model.Car;
 
-@Dao
 public class CarDaoImpl implements CarDao {
 
     @Override

@@ -4,10 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import taxi.dao.DriverDao;
 import taxi.db.Storage;
-import taxi.lib.Dao;
 import taxi.model.Driver;
 
-@Dao
 public class DriverDaoImpl implements DriverDao {
 
     @Override
