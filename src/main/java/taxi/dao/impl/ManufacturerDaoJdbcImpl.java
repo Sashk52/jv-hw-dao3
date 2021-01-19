@@ -54,7 +54,7 @@ public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
 
     @Override
     public List<Manufacturer> getAll() {
-        String query = "SELECT * FROM manufacturer WHERE is_deleted = false;";
+        String query = "SELECT * FROM manufacturer WHERE deleted = false;";
         List<Manufacturer> manufacturers = new ArrayList<>();
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -87,7 +87,7 @@ public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
     @Override
     public boolean delete(Long id) {
         String sqlQuery = "UPDATE manufacturer"
-                + " SET is_deleted = TRUE"
+                + " SET deleted = TRUE"
                 + " WHERE manufacturer_id = ?;";
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery)) {
