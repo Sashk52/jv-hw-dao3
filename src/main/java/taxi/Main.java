@@ -56,11 +56,11 @@ public class Main {
         System.out.println(driverService.get(1L));
         System.out.println(driverService.get(2L));
 
-        allDrivers = driverService.getAll();
-        System.out.println(allDrivers);
-
         driver1.setLicenceNumber("3333");
         driverService.update(driver1);
+
+        allDrivers = driverService.getAll();
+        System.out.println(allDrivers);
 
         driverService.delete(1L);
 
