@@ -79,7 +79,7 @@ public class CarDaoJdbcImpl implements CarDao {
     @Override
     public Car update(Car car) {
         String updateQuery = "UPDATE cars SET cars_model=?,manufacturers_id=? "
-                + " WHERE cars_id =? AND cars_deleted = 'false'";
+                + " WHERE cars_id =? AND cars_deleted = false";
         String deleteQuery = "DELETE FROM car_drivers WHERE car_id = ?";
         String newInsertionCar = "INSERT INTO car_drivers (driver_id, car_id) VALUES(?, ?)";
         try (Connection connection = ConnectionUtil.getConnection();
