@@ -28,11 +28,11 @@
         <url-pattern>/cars/registrationCar</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>drivers</servlet-name>
+        <servlet-name>allDrivers</servlet-name>
         <servlet-class>taxi.controllers.DriverController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>drivers</servlet-name>
+        <servlet-name>allDrivers</servlet-name>
         <url-pattern>/drivers/all</url-pattern>
     </servlet-mapping>
     <servlet>
@@ -43,4 +43,30 @@
         <servlet-name>registrationDriver</servlet-name>
         <url-pattern>/drivers/registrationDriver</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>injectData</servlet-name>
+        <servlet-class>taxi.controllers.InjectDataController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>injectData</servlet-name>
+        <url-pattern>/drivers/injectData</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>allManufacturers</servlet-name>
+        <servlet-class>taxi.controllers.ManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>allManufacturers</servlet-name>
+        <url-pattern>/manufacturers/all</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>registrationManufacturer</servlet-name>
+        <servlet-class>taxi.controllers.RegistrationManufacturer</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registrationManufacturer</servlet-name>
+        <url-pattern>/manufacturers/registrationManufacturer</url-pattern>
+    </servlet-mapping>
 </web-app>
+
+

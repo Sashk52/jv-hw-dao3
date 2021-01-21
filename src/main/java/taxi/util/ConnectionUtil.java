@@ -14,7 +14,7 @@ public class ConnectionUtil {
         }
     }
 
-            public static Connection getConnection() {
+    public static Connection getConnection() {
         Properties dbProperties = new Properties();
         dbProperties.put("user", "root");
         dbProperties.put("password", "1234");

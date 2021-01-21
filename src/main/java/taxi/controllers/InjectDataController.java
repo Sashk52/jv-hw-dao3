@@ -1,16 +1,17 @@
 package taxi.controllers;
 
-import java.io.IOException;
-import java.util.List;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import taxi.lib.Injector;
 import taxi.model.Driver;
 import taxi.service.DriverService;
 
-public class DriverController extends HttpServlet {
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+
+public class InjectDataController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("taxi");
     private DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
 
@@ -18,6 +19,10 @@ public class DriverController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
+        Driver driver1 = new Driver("Jim", "1111");
+        Driver driver2 = new Driver("Monica", "2222");
+        driverService.create(driver1);
+        driverService.create(driver2);
         List<Driver> allDrivers = this.driverService.getAll();
 
         req.setAttribute("drivers", allDrivers);
