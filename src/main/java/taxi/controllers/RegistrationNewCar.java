@@ -5,8 +5,18 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import taxi.lib.Injector;
+import taxi.model.Car;
+import taxi.model.Manufacturer;
+import taxi.service.CarService;
+import taxi.service.ManufacturerService;
 
 public class RegistrationNewCar extends HttpServlet {
+    private static final Injector injector = Injector.getInstance("taxi");
+    private ManufacturerService manufacturerService = (ManufacturerService) injector
+            .getInstance(ManufacturerService.class);
+    private CarService carService = (CarService) injector.getInstance(CarService.class);
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -16,6 +26,10 @@ public class RegistrationNewCar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        super.doPost(req, resp);
+        String model = req.getParameter("model");
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
+        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
+        Car car = carService.create(new Car(model,manufacturer));
+        resp.sendRedirect(req.getContextPath() + "/cars/all");
     }
 }

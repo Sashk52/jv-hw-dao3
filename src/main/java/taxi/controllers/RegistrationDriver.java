@@ -5,8 +5,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import taxi.lib.Injector;
+import taxi.model.Driver;
+import taxi.service.DriverService;
 
 public class RegistrationDriver extends HttpServlet {
+    private static final Injector injector = Injector.getInstance("taxi");
+    private DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -19,7 +25,7 @@ public class RegistrationDriver extends HttpServlet {
             throws ServletException, IOException {
         String name = req.getParameter("name");
         String licenceNumber = req.getParameter("licenceNumber");
-        System.out.println(name + " " + licenceNumber);
+        Driver driver = driverService.create(new Driver(name,licenceNumber));
         resp.sendRedirect(req.getContextPath() + "/drivers/all");
     }
 }

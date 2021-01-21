@@ -10,9 +10,9 @@
     <tr>
         <th>Id</th>
         <th>Model</th>
-        <th>ManufacturerId</th>
+        <th>Manufacturer</th>
     </tr>
-        <c:forEach var="car" items="${cars}"/>
+        <c:forEach var="car" items="${cars}">
             <tr>
                 <td>
                     <c:out value="${car.id}"/>
@@ -21,10 +21,10 @@
                     <c:out value="${car.model}"/>
                 </td>
                 <td>
-                    <c:out value="${car.manufacturer.name}"/>
+                    <c:out value="${car.manufacturer}"/>
                 </td>
             </tr>
-</c: forEach>
+        </c:forEach>
 </table>
 </body>
 </html>

@@ -4,17 +4,18 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Hello mates!</h1>
-<a href="${pageContext.request.contextPath}/injectData">Inject test data into the DB</a>
-<h4>Drives block</h4>
+<h4>Drivers block</h4>
 <a href="/drivers/all">AllDrivers</a><br>
 <a href="/drivers/registrationDriver">AddDriver</a><br>
 <h4>Manufacturer block</h4>
-<a href="/manufactirers/all">AllManufactures</a><br>
-<a href="/manufactirers/registrationManufacturer">AddManufacturer</a><br>
+<a href="/manufacturers/all">AllManufactures</a><br>
+<a href="/manufacturers/registrationManufacturer">AddManufacturer</a><br>
 <h4>Car block</h4>
 <a href="/cars/all">AllCars</a><br>
 <a href="/cars/registrationCar">AddCar</a><br>
+<h4>Driver to car block</h4>
+<a href="/cars/driverToCar">AddDriverToCar</a><br>
+
 
 
 

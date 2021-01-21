@@ -14,7 +14,8 @@
 <h1>Please, register you car:</h1>
 <form method="post">
     Please, provide model of your car <input type="text" name="model">
-    Please, provide manufacturer of your Car <input type="text" name="manufacturer">
+    Please, provide manufacturer id <input type="text" name="manufacturer_id">
+    <button type="submit">Register</button>
 </form>
 </body>
 </html>

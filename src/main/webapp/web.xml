@@ -44,14 +44,6 @@
         <url-pattern>/drivers/registrationDriver</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>injectData</servlet-name>
-        <servlet-class>taxi.controllers.InjectDataController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>injectData</servlet-name>
-        <url-pattern>/drivers/injectData</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>allManufacturers</servlet-name>
         <servlet-class>taxi.controllers.ManufacturerController</servlet-class>
     </servlet>
@@ -66,6 +58,14 @@
     <servlet-mapping>
         <servlet-name>registrationManufacturer</servlet-name>
         <url-pattern>/manufacturers/registrationManufacturer</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>driverToCar</servlet-name>
+        <servlet-class>taxi.controllers.AddDriverToCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>driverToCar</servlet-name>
+        <url-pattern>/cars/driverToCar</url-pattern>
     </servlet-mapping>
 </web-app>
 
