@@ -14,10 +14,13 @@
         <c:forEach var="car" items="$(cars)"/>
             <tr>
                 <td>
+                    <c:out value="$(car.id"/>
+                </td>
+                <td>
                     <c:out value="$(car.model"/>
                 </td>
                 <td>
-                    <c:out value="$(car.manufacturer)"/>
+                    <c:out value="$(car.manufacturer.name)"/>
                 </td>
             </tr>
 </c: forEach>

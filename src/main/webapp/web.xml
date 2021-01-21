@@ -19,4 +19,28 @@
         <servlet-name>allCars</servlet-name>
         <url-pattern>/cars/all</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>registrationCar</servlet-name>
+        <servlet-class>taxi.controllers.RegistrationNewCar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registrationCar</servlet-name>
+        <url-pattern>/cars/registrationCar</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>drivers</servlet-name>
+        <servlet-class>taxi.controllers.DriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>drivers</servlet-name>
+        <url-pattern>/drivers/all</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>registrationDriver</servlet-name>
+        <servlet-class>taxi.controllers.RegistrationDriver</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registrationDriver</servlet-name>
+        <url-pattern>/drivers/registrationDriver</url-pattern>
+    </servlet-mapping>
 </web-app>
