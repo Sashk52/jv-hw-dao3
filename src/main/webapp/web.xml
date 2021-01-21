@@ -11,4 +11,12 @@
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>allCars</servlet-name>
+        <servlet-class>taxi.controllers.CarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>allCars</servlet-name>
+        <url-pattern>/cars/all</url-pattern>
+    </servlet-mapping>
 </web-app>
