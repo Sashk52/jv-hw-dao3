@@ -1,4 +1,4 @@
-package taxi.controllers;
+package taxi.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,7 +10,7 @@ import taxi.lib.Injector;
 import taxi.model.Manufacturer;
 import taxi.service.ManufacturerService;
 
-public class ManufacturerController extends HttpServlet {
+public class GetAllManufacturersController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("taxi");
     private ManufacturerService manufacturerService = (ManufacturerService) injector
             .getInstance(ManufacturerService.class);

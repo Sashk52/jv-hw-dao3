@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Dear driver, please register here:</h1>
-<form method="post" action="${pageContext.request.contextPath}registrationDriver" >
+<form method="post" action="${pageContext.request.contextPath}add" >
     Please, provide name <input type="text" name="name">
     Please, provide licence number <input type="text" name="licenceNumber">
     <button type="submit">Register</button>

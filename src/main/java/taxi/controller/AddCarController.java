@@ -1,4 +1,4 @@
-package taxi.controllers;
+package taxi.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -11,7 +11,7 @@ import taxi.model.Manufacturer;
 import taxi.service.CarService;
 import taxi.service.ManufacturerService;
 
-public class RegistrationNewCar extends HttpServlet {
+public class AddCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("taxi");
     private ManufacturerService manufacturerService = (ManufacturerService) injector
             .getInstance(ManufacturerService.class);
@@ -20,7 +20,7 @@ public class RegistrationNewCar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/cars/registrationCar.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req, resp);
     }
 
     @Override

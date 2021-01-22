@@ -5,7 +5,7 @@
 
     <servlet>
         <servlet-name>index</servlet-name>
-        <servlet-class>taxi.controllers.IndexController</servlet-class>
+        <servlet-class>taxi.controller.DisplayIndexController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>
@@ -13,7 +13,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>allCars</servlet-name>
-        <servlet-class>taxi.controllers.CarController</servlet-class>
+        <servlet-class>taxi.controller.GetAllCarsController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>allCars</servlet-name>
@@ -21,15 +21,15 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>registrationCar</servlet-name>
-        <servlet-class>taxi.controllers.RegistrationNewCar</servlet-class>
+        <servlet-class>taxi.controller.AddCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>registrationCar</servlet-name>
-        <url-pattern>/cars/registrationCar</url-pattern>
+        <url-pattern>/cars/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>allDrivers</servlet-name>
-        <servlet-class>taxi.controllers.DriverController</servlet-class>
+        <servlet-class>taxi.controller.GetAllDriversController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>allDrivers</servlet-name>
@@ -37,15 +37,15 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>registrationDriver</servlet-name>
-        <servlet-class>taxi.controllers.RegistrationDriver</servlet-class>
+        <servlet-class>taxi.controller.AddDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>registrationDriver</servlet-name>
-        <url-pattern>/drivers/registrationDriver</url-pattern>
+        <url-pattern>/drivers/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>allManufacturers</servlet-name>
-        <servlet-class>taxi.controllers.ManufacturerController</servlet-class>
+        <servlet-class>taxi.controller.GetAllManufacturersController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>allManufacturers</servlet-name>
@@ -53,19 +53,19 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>registrationManufacturer</servlet-name>
-        <servlet-class>taxi.controllers.RegistrationManufacturer</servlet-class>
+        <servlet-class>taxi.controller.AddManufacturerController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>registrationManufacturer</servlet-name>
-        <url-pattern>/manufacturers/registrationManufacturer</url-pattern>
+        <url-pattern>/manufacturers/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>driverToCar</servlet-name>
-        <servlet-class>taxi.controllers.AddDriverToCarController</servlet-class>
+        <servlet-class>taxi.controller.AddDriverToCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>driverToCar</servlet-name>
-        <url-pattern>/cars/driverToCar</url-pattern>
+        <url-pattern>/cars/driver/add</url-pattern>
     </servlet-mapping>
 </web-app>
 
