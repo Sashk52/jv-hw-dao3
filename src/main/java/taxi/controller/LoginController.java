@@ -1,18 +1,22 @@
 package taxi.controller;
 
+import taxi.exception.AuthenticationException;
 import taxi.lib.Injector;
+import taxi.model.Driver;
+import taxi.security.AuthenticationService;
 import taxi.service.ManufacturerService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class LoginController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("taxi");
-    private ManufacturerService manufacturerService = (ManufacturerService) injector
-            .getInstance(ManufacturerService.class);
+    private AuthenticationService authService = (AuthenticationService) injector
+            .getInstance(AuthenticationService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -24,8 +28,16 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String login = req.getParameter("login");
-        String psw = req.getParameter("pwd");
-
+        String login = req.getParameter("driver_login");
+        String psw = req.getParameter("driver-password");
+    try{
+        Driver driver = authService.login(login,psw);
+        HttpSession session = req.getSession();
+        session.setAttribute("driver_id", driver.getId());
+    } catch (AuthenticationException e) {
+        req.setAttribute("errorMessage", e.getMessage());
+        req.getRequestDispatcher("/WEB-INF/views/drivers/login.jsp").forward(req,resp);
+    }
+    resp.sendRedirect(req.getContextPath()+"/index");
     }
 }

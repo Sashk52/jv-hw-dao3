@@ -77,8 +77,12 @@
     </servlet-mapping>
     <filter>
         <filter-name>authenticationFilter</filter-name>
-        <filter-class>taxi.web.filter.LoginController</filter-class>
+        <filter-class>taxi.web.filter.AuthenticationFilter</filter-class>
     </filter>
+    <filter-mapping>
+        <filter-name>authenticationFilter</filter-name>
+        <url-pattern>/index</url-pattern>
+    </filter-mapping>
 </web-app>
 
 
