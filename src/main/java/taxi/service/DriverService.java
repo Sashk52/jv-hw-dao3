@@ -2,6 +2,8 @@ package taxi.service;
 
 import taxi.model.Driver;
 
-public interface DriverService extends GenericService<Driver, Long> {
+import java.util.Optional;
 
+public interface DriverService extends GenericService<Driver, Long> {
+    Optional<Driver> findByLogin(String login);
 }

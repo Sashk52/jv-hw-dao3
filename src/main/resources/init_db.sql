@@ -35,6 +35,8 @@ CREATE TABLE `taxi_service`.`drivers` (
                                           `driver_lisence_number` VARCHAR(225) NOT NULL,
                                           `driver_deleted` VARCHAR(5) NOT NULL DEFAULT 'FALSE',
                                           PRIMARY KEY (`drivers_id`));
+                                          ADD COLUMN `driver_password` VARCHAR(225) NOT NULL AFTER `driver_lisence_number`,
+                                          ADD COLUMN `driver_login` VARCHAR(225) NOT NULL AFTER `driver_password`;
 CHANGE COLUMN `driver_deleted` `driver_deleted` TINYINT(1) NOT NULL DEFAULT 0 ;
 CREATE TABLE `taxi_service`.`car_drivers` (
                                               `driver_id` BIGINT(11) NOT NULL,
