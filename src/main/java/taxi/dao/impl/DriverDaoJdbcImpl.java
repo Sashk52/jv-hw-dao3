@@ -1,21 +1,24 @@
 package taxi.dao.impl;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import taxi.dao.DriverDao;
 import taxi.lib.Dao;
 import taxi.model.Driver;
 import taxi.util.ConnectionUtil;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
 @Dao
 public class DriverDaoJdbcImpl implements DriverDao {
     @Override
     public Driver create(Driver driver) {
-        String sqlQuery = "INSERT INTO drivers (driver_name, driver_lisence_number," +
-                " driver_login, driver_password) VALUES (?,?,?,?);";
+        String sqlQuery = "INSERT INTO drivers (driver_name, driver_lisence_number,"
+                + " driver_login, driver_password) VALUES (?,?,?,?);";
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement preparedStatement = connection
                         .prepareStatement(sqlQuery, Statement.RETURN_GENERATED_KEYS)) {
@@ -73,7 +76,7 @@ public class DriverDaoJdbcImpl implements DriverDao {
         String query = "UPDATE drivers SET driver_name=?, driver_lisence_number=?, driver_login=?"
                 + " driver_password=? WHERE drivers_id =? AND driver_deleted = FALSE;";
         try (Connection connection = ConnectionUtil.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, driver.getName());
             preparedStatement.setString(2, driver.getLicenceNumber());
             preparedStatement.setString(3, driver.getLogin());
@@ -117,14 +120,14 @@ public class DriverDaoJdbcImpl implements DriverDao {
         String query = "SELECT * FROM drivers d WHERE d.driver_login=? AND driver_deleted=false;";
         Driver driver = null;
         try (Connection connection = ConnectionUtil.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(query);) {
+                PreparedStatement preparedStatement = connection.prepareStatement(query);) {
             preparedStatement.setString(1, login);
             ResultSet resultset = preparedStatement.executeQuery();
             while (resultset.next()) {
                 driver = createDriver(resultset);
             }
         } catch (SQLException e) {
-            throw new RuntimeException("Can't get driver from db, by login= "+login,e);
+            throw new RuntimeException("Can't get driver from db, by login= " + login, e);
         }
         return Optional.ofNullable(driver);
     }
