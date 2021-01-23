@@ -1,14 +1,18 @@
 package taxi.web.filter;
 
-import taxi.lib.Injector;
-import taxi.service.DriverService;
-
-import javax.servlet.*;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import taxi.lib.Injector;
+import taxi.service.DriverService;
 
 public class AuthenticationFilter implements Filter {
     private static final String DRIVER_ID = "drivers_id";
@@ -19,8 +23,8 @@ public class AuthenticationFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-    allowedUrls.add("/drivers/login");
-    allowedUrls.add("/drivers/add");
+        allowedUrls.add("/drivers/login");
+        allowedUrls.add("/drivers/add");
     }
 
     @Override
