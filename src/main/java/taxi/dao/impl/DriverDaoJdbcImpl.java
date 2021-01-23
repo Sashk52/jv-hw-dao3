@@ -14,8 +14,8 @@ import java.util.Optional;
 public class DriverDaoJdbcImpl implements DriverDao {
     @Override
     public Driver create(Driver driver) {
-        String sqlQuery = "INSERT INTO drivers (driver_name, driver_lisence_number)"
-                + "VALUES (?,?,?,?);";
+        String sqlQuery = "INSERT INTO drivers (driver_name, driver_lisence_number," +
+                " driver_login, driver_password) VALUES (?,?,?,?);";
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement preparedStatement = connection
                         .prepareStatement(sqlQuery, Statement.RETURN_GENERATED_KEYS)) {
