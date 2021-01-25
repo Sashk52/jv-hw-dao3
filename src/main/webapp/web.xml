@@ -75,6 +75,14 @@
         <servlet-name>login</servlet-name>
         <url-pattern>/drivers/login</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>carsByDriver</servlet-name>
+        <servlet-class>taxi.controller.GetMyCurrentCarsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>carsByDriver</servlet-name>
+        <url-pattern>/cars/driver/all</url-pattern>
+    </servlet-mapping>
     <filter>
         <filter-name>authenticationFilter</filter-name>
         <filter-class>taxi.web.filter.AuthenticationFilter</filter-class>
