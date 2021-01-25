@@ -84,5 +84,3 @@
         <url-pattern>/index</url-pattern>
     </filter-mapping>
 </web-app>
-
-
