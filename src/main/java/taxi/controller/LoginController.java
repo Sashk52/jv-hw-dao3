@@ -31,7 +31,7 @@ public class LoginController extends HttpServlet {
         try {
             Driver driver = authService.login(login,psw);
             HttpSession session = req.getSession();
-            session.setAttribute("driver_id", driver.getId());
+            session.setAttribute("drivers_id", driver.getId());
         } catch (AuthenticationException e) {
             req.setAttribute("errorMessage", e.getMessage());
             req.getRequestDispatcher("/WEB-INF/views/drivers/login.jsp").forward(req,resp);

@@ -107,10 +107,10 @@ public class DriverDaoJdbcImpl implements DriverDao {
     private Driver createDriver(ResultSet resultset) throws SQLException {
         Long id = resultset.getObject("drivers_id", Long.class);
         String name = resultset.getObject("driver_name", String.class);
-        String licenseNumber = resultset.getObject("driver_lisence_number", String.class);
+        String lisenceNumber = resultset.getObject("driver_lisence_number", String.class);
         String login = resultset.getObject("driver_login", String.class);
         String password = resultset.getObject("driver_password", String.class);
-        Driver driver = new Driver(name, licenseNumber, login, password);
+        Driver driver = new Driver(name, lisenceNumber, login, password);
         driver.setId(id);
         return driver;
     }

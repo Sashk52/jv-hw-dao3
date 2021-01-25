@@ -7,8 +7,8 @@
 <h1>Login page</h1>
 <h4 style="color: red">${errorMessage}</h4>
 <form action="${pageContext.request.contextPath}login"method="post">
-    Please provide your login:<input type="text" name="login"><br>
-    Please provide your password:<input type="password" name="pwd"><br>
+    Please provide your login:<input type="text" name="driver_login"><br>
+    Please provide your password:<input type="password" name="driver-password"><br>
     <button type="submit">Login</button><br>
     <a href="/drivers/add">Registration</a><br>
 </form>
