@@ -13,6 +13,7 @@ import taxi.service.DriverService;
 public class GetAllDriversController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("taxi");
     private DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
