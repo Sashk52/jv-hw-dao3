@@ -15,9 +15,6 @@
 <a href="/cars/add">AddCar</a><br>
 <h4>Driver to car block</h4>
 <a href="/cars/driver/add">AddDriverToCar</a><br>
-
-
-
-
+<a href="/cars/driver/all">AllCarsByDriver</a><br>
 </body>
 </html>
