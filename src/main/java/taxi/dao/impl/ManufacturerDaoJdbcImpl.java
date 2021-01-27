@@ -17,7 +17,7 @@ import taxi.util.ConnectionUtil;
 public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
     @Override
     public Manufacturer create(Manufacturer manufacturer) {
-        String sqlQuery = "INSERT INTO manufacturer (name, country)"
+        String sqlQuery = "INSERT INTO manufacturer (manufacturer_name, manufacturer_country)"
                 + "VALUES (?,?);";
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement preparedStatement = connection
@@ -70,7 +70,7 @@ public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
 
     @Override
     public Manufacturer update(Manufacturer manufacturer) {
-        String query = "UPDATE manufacturer SET name=?, country=?"
+        String query = "UPDATE manufacturer SET manufacturer_name=?, manufacturer_country=?"
                 + " WHERE manufacturer_id =?;";
         try (Connection connection = ConnectionUtil.getConnection();
                  PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -101,8 +101,8 @@ public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
 
     private Manufacturer createManufacturer(ResultSet resultset) throws SQLException {
         Long id = resultset.getObject("manufacturer_id", Long.class);
-        String name = resultset.getObject("name", String.class);
-        String country = resultset.getObject("country", String.class);
+        String name = resultset.getObject("manufacturer_name", String.class);
+        String country = resultset.getObject("manufacturer_country", String.class);
         Manufacturer manufacturer = new Manufacturer(name, country);
         manufacturer.setId(id);
         return manufacturer;

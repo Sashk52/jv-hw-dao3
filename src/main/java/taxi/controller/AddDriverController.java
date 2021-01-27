@@ -25,7 +25,14 @@ public class AddDriverController extends HttpServlet {
             throws ServletException, IOException {
         String name = req.getParameter("name");
         String licenceNumber = req.getParameter("licenceNumber");
-        Driver driver = driverService.create(new Driver(name,licenceNumber));
-        resp.sendRedirect(req.getContextPath() + "/drivers/all");
+        String login = req.getParameter("login");
+        String password = req.getParameter("password");
+        String repeatPassword = req.getParameter("repeat_password");
+        if (password.equals(repeatPassword)) {
+            driverService.create(new Driver(name, licenceNumber, login, password));
+            resp.sendRedirect(req.getContextPath() + "/drivers/login");
+        }
+        req.setAttribute("error Message", "Passwords are not identical!");
+        req.getRequestDispatcher("/WEB-INF/views/drivers/login");
     }
 }

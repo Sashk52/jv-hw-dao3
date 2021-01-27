@@ -29,7 +29,7 @@ public class AddCarController extends HttpServlet {
         String model = req.getParameter("model");
         Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
         Manufacturer manufacturer = manufacturerService.get(manufacturerId);
-        Car car = carService.create(new Car(model,manufacturer));
+        Car car = carService.create(new Car(model, manufacturer));
         resp.sendRedirect(req.getContextPath() + "/cars/all");
     }
 }

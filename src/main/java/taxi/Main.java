@@ -45,8 +45,8 @@ public class Main {
         DriverService driverService = (DriverService) injector
                 .getInstance(DriverService.class);
 
-        Driver driver1 = new Driver("Jo", "1111");
-        Driver driver2 = new Driver("Sam", "2222");
+        Driver driver1 = new Driver("Jo", "1111", "JoBo", "555");
+        Driver driver2 = new Driver("Sam", "2222", "SamSuper","123");
 
         driverService.create(driver1);
         driverService.create(driver2);
